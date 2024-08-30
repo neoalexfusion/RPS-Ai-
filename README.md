@@ -70,7 +70,6 @@ mp_draw = mp.solutions.drawing_utils
 ## Classifying Hand Gestures
 ```bash
 def classify_gesture(landmarks):
-    # Implementation for gesture classification
     pass
 ```
 ## AI Move and Decision Logic
@@ -89,9 +88,6 @@ def speak(text):
 ```bash
 while True:
     ret, frame = cap.read()
-    # Process frame and perform hand tracking
-    # Determine gestures and AI move
-    # Announce result
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 cap.release()
