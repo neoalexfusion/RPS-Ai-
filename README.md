@@ -73,6 +73,31 @@ def classify_gesture(landmarks):
     # Implementation for gesture classification
     pass
 ```
-
+## AI Move and Decision Logic
+```bash
+def ai_move():
+    return random.choice(['rock', 'paper', 'scissors'])
+```
+## AI Voice Feedback
+```bash
+def speak(text):
+    tts = gTTS(text)
+    tts.save("output.mp3")
+    os.system("start output.mp3")
+```
+## The Main Game Loop
+```bash
+while True:
+    ret, frame = cap.read()
+    # Process frame and perform hand tracking
+    # Determine gestures and AI move
+    # Announce result
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+cap.release()
+cv2.destroyAllWindows()
+```
+## Conclusion
+Thank you for checking out the Rock-Paper-Scissors game with AI and hand tracking. Feel free to explore the code, contribute to the project, or use it as a reference for your own AI and computer vision projects.
 
 
