@@ -37,3 +37,4 @@ This project is a fun and interactive Rock-Paper-Scissors game where you can cha
 ### Clone the Repository:
 ```bash
 git clone https://github.com/neoalexfusion/RPS-Ai-.git
+cd RPS-Ai-
