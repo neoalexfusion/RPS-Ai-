@@ -40,4 +40,39 @@ git clone https://github.com/neoalexfusion/RPS-Ai-.git
 cd RPS-Ai-
 ```
 ## Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+## Run the Game
+```bash
+python hand_tracking.py
+```
+## Code Walkthrough
+
+## Importing Libraries
+```bash
+import cv2
+import mediapipe as mp
+from gtts import gTTS
+import os
+import random
+```
+## Setting Up the Camera
+```bash
+cap = cv2.VideoCapture(0)
+```
+## Hand Tracking with MediaPipe
+```bash
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands()
+mp_draw = mp.solutions.drawing_utils
+```
+## Classifying Hand Gestures
+```bash
+def classify_gesture(landmarks):
+    # Implementation for gesture classification
+    pass
+```
+
+
 
