@@ -3,11 +3,11 @@
 Welcome to the documentation for the Rock-Paper-Scissors game built with AI and real-time hand gesture recognition. This guide will walk you through the project’s features, setup instructions, and the underlying code.
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Technologies Used](#technologies-used)
-4. [Setup Instructions](#setup-instructions)
-5. [Code Walkthrough](#code-walkthrough)
+[Introduction](#introduction)
+[Features](#features)
+[Technologies Used](#technologies-used)
+[Setup Instructions](#setup-instructions)
+[Code Walkthrough](#code-walkthrough)
    - [Importing Libraries](#importing-libraries)
    - [Setting Up the Camera](#setting-up-the-camera)
    - [Hand Tracking with MediaPipe](#hand-tracking-with-mediapipe)
@@ -15,7 +15,7 @@ Welcome to the documentation for the Rock-Paper-Scissors game built with AI and 
    - [AI Move and Decision Logic](#ai-move-and-decision-logic)
    - [AI Voice Feedback](#ai-voice-feedback)
    - [The Main Game Loop](#the-main-game-loop)
-6. [Conclusion](#conclusion)
+[Conclusion](#conclusion)
 
 ## Introduction
 This project is a fun and interactive Rock-Paper-Scissors game where you can challenge an AI opponent. The AI uses your webcam to recognize your hand gestures in real-time, decides its move, and announces the result through voice feedback. It's a great demonstration of how computer vision and AI can be integrated into a simple yet engaging game.
