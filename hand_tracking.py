@@ -5,6 +5,8 @@ import random
 from gtts import gTTS
 import os
 import threading
+# Replace afplay with playsound to be platform-agnostic
+from playsound import playsound
 
 class CameraCapture:
     def __init__(self, src=0):
@@ -71,7 +73,12 @@ def determine_winner(player_move, ai_move):
 def speak(text):
     tts = gTTS(text=text, lang='en')
     tts.save("response.mp3")
+    playsound("response.mp3")
+
+    """
+    afplay is exclusive to MacOS
     os.system("afplay response.mp3")
+    """
 
 # Create and use the threaded camera capture                                                                                                                           
 camera = CameraCapture()
