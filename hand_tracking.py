@@ -5,6 +5,7 @@ import random
 from gtts import gTTS
 import os
 import threading
+# Replace afplay with playsound to be platform-agnostic
 from playsound import playsound
 
 class CameraCapture:

@@ -1,5 +1,8 @@
 opencv-python~=4.8.0.74
 mediapipe~=0.10.0
 gTTS~=2.3.2
+# Replace afplay
 playsound ~= 1.3.0
+# playsound wants pygobject to be more efficient
+pygobject ~= 3.48.2
 # Update
