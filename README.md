@@ -94,6 +94,6 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 ## Conclusion
-Thank you for checking out the Rock-Paper-Scissors game with AI and hand tracking. Feel free to explore the code, contribute to the project, or use it as a reference for your own AI and computer vision projects.
+Thank you for checking out the Rock-Paper-Scissors game with AI and hand tracking. Feel free to explore the code, contribute to the project, or use it as a reference for your own AI and computer vision projects!
 
 
