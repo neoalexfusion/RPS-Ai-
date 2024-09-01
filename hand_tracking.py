@@ -9,9 +9,9 @@ import threading
 class CameraCapture:
     def __init__(self, src=0):
         self.cap = cv2.VideoCapture(src)
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)  # Lower resolution for performance
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)     # Lower resolution for performance
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
-        self.cap.set(cv2.CAP_PROP_FPS, 15)  # Reduce FPS to reduce load
+        self.cap.set(cv2.CAP_PROP_FPS, 15)              # Reduce FPS to reduce load
         self.ret, self.frame = self.cap.read()
         self.lock = threading.Lock()
         self.running = True
@@ -73,17 +73,17 @@ def speak(text):
     tts.save("response.mp3")
     os.system("afplay response.mp3")
 
-# Create and use the threaded camera capture
+# Create and use the threaded camera capture                                                                                                                           
 camera = CameraCapture()
 
 frame_count = 0
-ai_interval = 30  # AI processing every 30 frames to reduce overhead
-game_delay = 5  # Delay in seconds between each game
-hand_entry_buffer = 2.0  # Buffer time after hand enters frame (in seconds)
+ai_interval = 30          # AI processing every 30 frames to reduce overhead
+game_delay = 5     # Delay in seconds between each game
+hand_entry_buffer = 2.0    # Buffer time after hand enters frame (in seconds)
 
 with mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) as hands:
     last_game_time = time.time()
-    hand_entry_time = None  # To track when hand first enters frame
+    hand_entry_time = None    # To track when hand first enters frame
 
     while True:
         ret, frame = camera.read()
@@ -96,7 +96,7 @@ with mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) a
         result = hands.process(rgb_frame)
 
         if result.multi_hand_landmarks:
-            if hand_entry_time is None:  # Detect when hand first enters frame
+            if hand_entry_time is None:      # Detect when hand first enters frame
                 hand_entry_time = time.time()
                 print("Hand entered frame, starting buffer...")
 
@@ -105,21 +105,21 @@ with mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) a
                 for hand_landmarks in result.multi_hand_landmarks:
                     mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
-                    if frame_count % ai_interval == 0:  # Only process AI logic every 30 frames
+                    if frame_count % ai_interval == 0:    # Only process AI logic every 30 frames
                         current_time = time.time()
-                        if current_time - last_game_time > game_delay:  # Check if enough time has passed
+                        if current_time - last_game_time > game_delay:    # Check if enough time has passed
                             player_move = classify_hand_shape(hand_landmarks)
                             ai_move = get_ai_move()
                             winner = determine_winner(player_move, ai_move)
                             response = f"AI chose {ai_move}. You chose {player_move}. {winner}"
-                            print(response)  # For debugging
+                            print(response)    # For debugging
 
-                            speak(response)  # You can comment this out for testing without audio
+                            speak(response)    # You can comment this out for testing without audio
 
-                            last_game_time = current_time  # Reset the game timer
-                            hand_entry_time = None  # Reset hand entry time after each game
+                            last_game_time = current_time      # Reset the game timer
+                            hand_entry_time = None             # Reset hand entry time after each game
         else:
-            hand_entry_time = None  # Reset if hand leaves the frame
+            hand_entry_time = None        # Reset if hand leaves the frame
 
         cv2.imshow('Hand Tracking with AI - Hand Entry Buffer', frame)
 
