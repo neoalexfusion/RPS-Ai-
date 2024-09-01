@@ -5,7 +5,6 @@ import random
 from gtts import gTTS
 import os
 import threading
-from playsound import playsound
 
 class CameraCapture:
     def __init__(self, src=0):
@@ -72,7 +71,7 @@ def determine_winner(player_move, ai_move):
 def speak(text):
     tts = gTTS(text=text, lang='en')
     tts.save("response.mp3")
-    playsound("response.mp3")
+    os.system("afplay response.mp3")
 
 # Create and use the threaded camera capture                                                                                                                           
 camera = CameraCapture()
