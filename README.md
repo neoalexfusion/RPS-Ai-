@@ -83,9 +83,9 @@ def ai_move():
 ## AI Voice Feedback
 ```bash
 def speak(text):
-    tts = gTTS(text)
-    tts.save("output.mp3")
-    os.system("start output.mp3")
+    tts = gTTS(text=text, lang='en')
+    tts.save("response.mp3")
+    playsound("response.mp3")
 ```
 ## The Main Game Loop
 ```bash
