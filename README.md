@@ -53,9 +53,12 @@ python hand_tracking.py
 ```bash
 import cv2
 import mediapipe as mp
+import time
+import random
 from gtts import gTTS
 import os
-import random
+import threading
+from playsound import playsound
 ```
 ## Setting Up the Camera
 ```bash
