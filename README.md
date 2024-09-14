@@ -53,9 +53,12 @@ python hand_tracking.py
 ```bash
 import cv2
 import mediapipe as mp
+import time
+import random
 from gtts import gTTS
 import os
-import random
+import threading
+from playsound import playsound
 ```
 ## Setting Up the Camera
 ```bash
@@ -80,9 +83,9 @@ def ai_move():
 ## AI Voice Feedback
 ```bash
 def speak(text):
-    tts = gTTS(text)
-    tts.save("output.mp3")
-    os.system("start output.mp3")
+    tts = gTTS(text=text, lang='en')
+    tts.save("response.mp3")
+    playsound("response.mp3")
 ```
 ## The Main Game Loop
 ```bash
@@ -94,6 +97,6 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 ## Conclusion
-Thank you for checking out the Rock-Paper-Scissors game with AI and hand tracking. Feel free to explore the code, contribute to the project, or use it as a reference for your own AI and computer vision projects.
+Thank you for checking out the Rock-Paper-Scissors game with AI and hand tracking. Feel free to explore the code, contribute to the project, or use it as a reference for your own AI and computer vision projects!
 
 
