@@ -125,6 +125,7 @@ with mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) a
         cv2.imshow('Hand Tracking with AI - Hand Entry Buffer', frame)
 
         if cv2.waitKey(10) & 0xFF == ord('q'):
+            print("Exiting the game...")
             break
 
 camera.release()
